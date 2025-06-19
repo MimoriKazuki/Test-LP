@@ -1,0 +1,130 @@
+This is a Next.js 15 project using App Router, TypeScript, Tailwind CSS, Shadcn/ui, and Supabase.
+
+Key conventions:
+- Use src/ directory structure
+- Prefer Server Components, use Client Components only when necessary
+- Strict TypeScript typing
+- Use React Hook Form + Zod for form management
+- Implement Supabase authentication and database operations
+- Follow accessibility best practices
+
+File structure:
+- src/app/ - App Router pages and layouts
+- src/components/ - React components
+  - ui/ - Shadcn/ui components
+  - auth/ - Authentication related components
+  - layout/ - Layout components
+- src/lib/ - Utilities and configurations
+  - supabase/ - Supabase client and helpers
+  - utils/ - Helper functions
+  - validations/ - Zod schemas
+- src/types/ - TypeScript type definitions
+- src/hooks/ - Custom React hooks
+- src/stores/ - Zustand stores
+
+Component guidelines:
+- Use Server Components by default
+- Add 'use client' directive only when necessary
+- Implement proper loading and error states
+- Use proper TypeScript types for props and state
+- Follow React Server Components best practices
+- Implement proper error boundaries
+
+Code style:
+- Use const assertions where appropriate
+- Prefer arrow functions for components
+- Use proper TypeScript typing
+- Implement loading and error states
+- Use proper naming conventions:
+  - Components: PascalCase (e.g., LoginForm.tsx)
+  - Utilities: camelCase (e.g., supabaseClient.ts)
+  - Types: PascalCase with Type suffix (e.g., UserType.ts)
+  - Hooks: camelCase with use prefix (e.g., useAuth.ts)
+
+Form handling:
+- Use React Hook Form for form management
+- Implement Zod schemas for validation
+- Use proper error handling and display
+- Implement proper form state management
+
+Authentication:
+- Use Supabase Auth Helpers
+- Implement proper session management
+- Use middleware for protected routes
+- Follow security best practices
+
+Database:
+- Use Supabase for database operations
+- Implement proper error handling
+- Use TypeScript types for database models
+- Follow database best practices
+
+Accessibility:
+- Use semantic HTML elements
+- Implement proper ARIA attributes
+- Ensure keyboard navigation
+- Follow WCAG guidelines
+- Use proper color contrast
+- Implement proper focus management
+
+Performance:
+- Use proper image optimization
+- Implement proper caching strategies
+- Use proper code splitting
+- Follow Next.js performance best practices
+
+Testing:
+- Write unit tests for components
+- Write integration tests for pages
+- Write E2E tests for critical flows
+- Use proper testing utilities
+
+Documentation:
+- Document complex components
+- Document API endpoints
+- Document database schema
+- Document authentication flow
+
+// クライアントコンポーネントでの使用例
+'use client'
+import { createClient } from '@/lib/supabase/client'
+
+const supabase = createClient()
+
+// サーバーコンポーネントでの使用例
+import { createClient } from '@/lib/supabase/server'
+
+const supabase = createClient()
+
+// ミドルウェアでの使用例
+import { createClient } from '@/lib/supabase/middleware'
+
+export async function middleware(request: NextRequest) {
+  const { supabase, response } = createClient(request)
+  // ...
+}
+
+'use client'
+
+import { useAuth } from '@/hooks/useAuth'
+
+export const LoginForm = () => {
+  const { signIn, error, isLoadingUser } = useAuth()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await signIn.mutateAsync({
+      email: 'user@example.com',
+      password: 'password'
+    })
+  }
+
+  if (isLoadingUser) return <div>Loading...</div>
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {error && <div className="error">{error}</div>}
+      {/* フォームの内容 */}
+    </form>
+  )
+} 

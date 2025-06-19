@@ -58,8 +58,8 @@ const Pricing = () => {
     {
       name: 'スターター',
       description: 'AI導入を始めたい中小企業向け',
-      price: 100000,
-      originalPrice: 150000,
+      price: { monthly: 100000, yearly: 1000000 },
+      originalPrice: { monthly: 150000, yearly: 1500000 },
       icon: Rocket,
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-500/5 to-cyan-500/5',
@@ -78,8 +78,8 @@ const Pricing = () => {
     {
       name: 'プロフェッショナル',
       description: '本格的なAI・DX推進企業向け',
-      price: 300000,
-      originalPrice: 500000,
+      price: { monthly: 300000, yearly: 3000000 },
+      originalPrice: { monthly: 500000, yearly: 5000000 },
       icon: Crown,
       gradient: 'from-purple-500 to-pink-500',
       bgGradient: 'from-purple-500/5 to-pink-500/5',
@@ -98,7 +98,7 @@ const Pricing = () => {
     {
       name: 'エンタープライズ',
       description: '大企業向け完全カスタムAI導入',
-      price: '要相談',
+      price: { monthly: '要相談', yearly: '要相談' },
       icon: Award,
       gradient: 'from-amber-500 to-orange-500',
       bgGradient: 'from-amber-500/5 to-orange-500/5',
@@ -223,17 +223,17 @@ const Pricing = () => {
 
                   {/* Pricing */}
                   <div className="text-center mb-8">
-                    {plan.originalPrice && typeof plan.price === 'number' && (
+                    {plan.originalPrice && typeof plan.price.monthly === 'number' && (
                       <div className="text-lg text-gray-400 line-through mb-2">
-                        ¥{plan.originalPrice.toLocaleString()}
+                        ¥{plan.originalPrice.monthly.toLocaleString()}
                       </div>
                     )}
                     
                     <div className="text-5xl font-bold text-gray-900 mb-2">
-                      {typeof plan.price === 'number' ? (
+                      {typeof plan.price.monthly === 'number' ? (
                         <>
                           <span className={`bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent`}>
-                            ¥{(animatedNumbers[plan.name.toLowerCase().includes('スターター') ? 'starter' : 'pro'] || plan.price).toLocaleString()}
+                            ¥{(animatedNumbers[plan.name.toLowerCase().includes('スターター') ? 'starter' : 'pro'] || plan.price.monthly).toLocaleString()}
                           </span>
                           <span className="text-lg font-normal text-gray-600 ml-2">
                             /月
@@ -241,12 +241,12 @@ const Pricing = () => {
                         </>
                       ) : (
                         <span className={`bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent`}>
-                          {plan.price}
+                          {plan.price.monthly}
                         </span>
                       )}
                     </div>
                     
-                    {typeof plan.price === 'number' && (
+                    {typeof plan.price.monthly === 'number' && (
                       <div className="text-sm text-gray-500">
                         月額料金
                       </div>
