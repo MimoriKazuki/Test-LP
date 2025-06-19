@@ -1,71 +1,38 @@
 # Test-LP
 
-モダンなランディングページアプリケーションです。Next.jsとTailwind CSSを使用して構築されています。
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## 機能
+## Getting Started
 
-- ⚡ 高速パフォーマンス（Next.js最適化）
-- 📱 レスポンシブデザイン
-- 🎨 カスタマイズ可能なデザイン
-- 🌐 Vercel対応
-
-## 技術スタック
-
-- **フレームワーク**: Next.js 14
-- **スタイリング**: Tailwind CSS
-- **言語**: TypeScript
-- **デプロイ**: Vercel
-
-## セットアップ
-
-### 前提条件
-
-- Node.js 18以上
-- npm または yarn
-
-### インストール
+First, run the development server:
 
 ```bash
-# 依存関係をインストール
-npm install
-
-# 開発サーバーを起動
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### ビルド
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-# プロダクションビルド
-npm run build
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-# プロダクションサーバーを起動
-npm start
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Vercelへのデプロイ
+## Learn More
 
-1. [Vercel](https://vercel.com)にアカウントを作成
-2. GitHubリポジトリを接続
-3. 自動デプロイが開始されます
+To learn more about Next.js, take a look at the following resources:
 
-または、Vercel CLIを使用：
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```bash
-npm i -g vercel
-vercel
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## 開発
+## Deploy on Vercel
 
-```bash
-# 開発サーバー起動
-npm run dev
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-# リント実行
-npm run lint
-```
-
-## ライセンス
-
-MIT
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
