@@ -310,7 +310,7 @@ const Pricing = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6">
-                  <p className="text-gray-700 italic mb-3">"{testimonial.text}"</p>
+                  <p className="text-gray-700 italic mb-3">&ldquo;{testimonial.text}&rdquo;</p>
                   <p className="text-sm text-gray-600 font-medium">— {testimonial.author}</p>
                 </div>
               ))}

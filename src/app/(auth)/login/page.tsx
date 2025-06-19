@@ -66,7 +66,7 @@ export default function LoginPage() {
           </button>
         </div>
         <div className="text-center mt-6 text-sm">
-          Don't have an account? <a href="#" className="font-semibold hover:underline">Create account</a>
+          Don&apos;t have an account? <a href="#" className="font-semibold hover:underline">Create account</a>
         </div>
       </div>
       <footer className="mt-8 text-gray-400 text-xs">© 2025 Your Company. All rights reserved.</footer>

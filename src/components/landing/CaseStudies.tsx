@@ -170,7 +170,7 @@ const CaseStudies = () => {
                     <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/20 relative">
                       <Quote className={`h-10 w-10 text-transparent bg-gradient-to-r ${study.gradient} bg-clip-text mb-4`} />
                       <blockquote className="text-lg text-gray-700 italic leading-relaxed mb-6">
-                        "{study.testimonial}"
+                        &ldquo;{study.testimonial}&rdquo;
                       </blockquote>
                       <cite className="text-gray-600 font-medium not-italic">
                         — {study.person}
